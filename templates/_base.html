@@ -22,6 +22,12 @@
     {% block css %}
     {% endblock %}
 
+    <style>
+    {% for css in vue_style %}
+        ((css|safe))
+    {% endfor %}
+    </style>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,6 +40,10 @@
     <meta name="mobile-web-app-capable" content="yes">
 </head>
 <body>
+
+    {% for html in vue_html %}
+        ((html|safe))
+    {% endfor %}
 
     <!-- top nav-bar -->
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
@@ -108,13 +118,15 @@
             </ul>
           </div>
         </nav>
+      </div>
+    </div>
 
 
     <main role="main" class="container">
         <div class="container">
-{% block content %}
-{% endblock %}
-            </div>
+            {% block content %}
+            {% endblock %}
+        </div>
     </main>
 
     <footer class="footer">
@@ -137,6 +149,12 @@
 
 {% block js %}
 {% endblock %}
+
+<script>
+{% for js in vue_script %}
+    ((js|safe))
+{% endfor %}
+</script>
 
 </body>
 </html>
