@@ -3,7 +3,7 @@
 </template>
 
 <script>
-module.exports = {
+{
     data: function() {
         return { test: 'Hello World' };
     }
@@ -12,7 +12,7 @@ module.exports = {
 
 <style scoped>
 div {
-    font-size: 3em;
+    font-size: 5em;
     text-align: center;
 }
 </style>

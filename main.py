@@ -44,6 +44,7 @@ def render(template, title, vue=(), **kwargs):
     vue_script = []
     vue_style = []
 
+    # go through each vue component, and render the HTML, CSS, and JavaScript
     for v in vue:
         if not str(v).endswith('.vue'):
             v = str(v) + '.vue'
